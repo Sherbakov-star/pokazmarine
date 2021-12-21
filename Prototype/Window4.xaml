@@ -1,0 +1,40 @@
+﻿<Window x:Class="Prototype.Window4"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Prototype"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Sherbakoff" Height="600" Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Grid Background="#ffdadada">
+        <Border MinWidth="400" Margin="49,43,39.6,75.4" Background="#ffcabd" VerticalAlignment="Center" Padding="30" MaxWidth="550" CornerRadius="20" Height="452">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="Sherbakoff's Bank" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
+                <TextBlock Text="История платежей" FontSize="24" FontWeight="Bold"/>
+                <ListView x:Name="listView" Height="228" Margin="0,-50,0.4,-300" SelectionChanged="ListView_SelectionChanged">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Padding="5">
+                                <StackPanel Orientation="Horizontal">
+                                    <StackPanel Orientation="Vertical" Width="150">
+                                        <TextBlock Text="{Binding payment}" FontWeight="Bold"></TextBlock>
+                                        <TextBlock Text="{Binding sum}" FontWeight="Bold"></TextBlock>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Grid Margin="10 250 10 10">
+                    <Button HorizontalAlignment="Left" Content="Назад" Background="Black" VerticalAlignment="Bottom" Click="Button_Click"  />
+                </Grid>
+
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
